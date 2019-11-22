@@ -2,14 +2,18 @@
 <%=link_to '+ Add new cocktail', new_cocktail_path%>
 
 
-<div class="card">
-  <%@cocktails.each do |cocktail|%>
-    <h2><%= cocktail.name%></h2>
-    <% cocktail.ingredients.each do |ingredient| %>
-      <p><%= ingredient.name%></p>
-      <%cocktail.doses.each do |dose| %>
-        <p><%= dose.description%></p>
+<div class="card" style="width: 18rem;">
+  <img src="#" class="card-img-top" >
+  <div class="card-body">
+    <%@cocktails.each do |cocktail|%>
+      <h5 class="card-title"><%= cocktail.name%></h5>
+      <% cocktail.ingredients.each do |ingredient| %>
+        <p class="card-text"><%= ingredient.name%></p>
+        <%cocktail.doses.each do |dose| %>
+          <p><%= dose.description%></p>
+        <%end%>
       <%end%>
     <%end%>
-  <%end%>
+  </div>
 </div>
+
