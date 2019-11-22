@@ -1,11 +1,17 @@
-<h1>Our Cocktails</h1>
-<%=link_to '+ Add new cocktail', new_cocktail_path%>
 
 
-<div class="card" style="width: 18rem;">
-  <img src="#" class="card-img-top" >
-  <div class="card-body">
-    <%@cocktails.each do |cocktail|%>
+<div class="banner">
+  <h1>Our Cocktails</h1>
+</div>
+
+<div class="btn-add">
+  <%=link_to '+ Add new cocktail', new_cocktail_path%>
+</div>
+
+<div class="grid-container">
+  <%@cocktails.each do |cocktail|%>
+    <div class="carte">
+      <img src="#" class="card_img_top" >
       <h5 class="card-title"><%= cocktail.name%></h5>
       <% cocktail.ingredients.each do |ingredient| %>
         <p class="card-text"><%= ingredient.name%></p>
@@ -13,7 +19,7 @@
           <p><%= dose.description%></p>
         <%end%>
       <%end%>
-    <%end%>
   </div>
+  <%end%>
 </div>
-
+</div>
