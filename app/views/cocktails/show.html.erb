@@ -1,5 +1,12 @@
 <p>Your Cocktail</p>
 <p><%=@cocktail.name%></p>
+<%@cocktail.ingredients.each do |ingredient| %>
+  <p><%= ingredient.name%></p>
+  <%@cocktail.doses.each do |dose| %>
+    <p><%= dose.description%></p>
+  <%end%>
+<%end%>
+
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient %>
